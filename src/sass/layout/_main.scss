@@ -76,7 +76,7 @@
         }
     }
 
-    // Section experiencia ---
+    // Section experiencia --
     &__expe {
         position: relative;
         padding-block: 40px;
@@ -99,6 +99,7 @@
         }
     }
 
+    // Decoracion del main experiencia --
     &__expe::after {
         content: '';
         width: 100%;
@@ -110,7 +111,7 @@
         background: url(../../../img/deco-body.svg) -120px center/cover no-repeat;
     }
 
-    // Seccion proyectos ---
+    // Seccion proyectos --
     &__projects {
         padding-block: 80px;
 
