@@ -7,11 +7,11 @@
 /**
  * Clear inner floats
  */
-.clearfix::after {
-  clear: both;
-  content: '';
-  display: table;
-}
+// .clearfix::after {
+//   clear: both;
+//   content: '';
+//   display: table;
+// }
 
 /**
  * Main content containers
@@ -54,4 +54,11 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+// clase para los botones
+.btn {
+  position: relative;
+  padding-bottom: 10px;
+  text-transform: uppercase;
 }

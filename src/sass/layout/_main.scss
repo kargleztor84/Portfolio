@@ -1,0 +1,171 @@
+@use '../abstracts' as ab;
+@use '../base/helpers';
+
+// <-- MAIN VISTA MOBIL -->
+.main {
+    position: relative;
+    overflow: hidden;
+    background: url(../../../img/deco-body.svg) (-250px 140px) no-repeat;
+
+    // --- Seccion hero ---
+    &__hero {
+        margin-bottom: 80px;
+
+        // Contenedor de la imagen en main__hero ---
+        &--img {
+            margin-inline: auto;
+            width: clamp(174px, 42vw, 445px);
+            height: clamp(385px, 78.2vw, 759px);
+            display: flex;
+            background-image: linear-gradient(to top, ab.$dark-grey, #24242400);
+            margin-bottom: 12%;
+
+            // Imagen ---
+            &__men {
+                align-self: flex-end;
+            }
+
+            // Semicirculo ---
+            &__circle {
+                position: absolute;
+                right: -65px;
+                top: clamp(254px, 61.4vw, 521px);
+                width: 129px;
+                height: 129px;
+                border: 1px solid white;
+                border-radius: 50%;
+            }
+        }
+
+        // Contenedor del encabezado y los textos ---
+        &--text {
+            text-align: center;
+
+            // Encabezado h1 ---
+            &__heading {
+                font-size: clamp(40px, 9.5vw, ab.$h-xl);
+                line-height: clamp(40px, 9.5vw, ab.$h-xl);
+                font-weight: 700;
+                letter-spacing: -1.14px;
+                margin-bottom: 7%;
+
+                // Span undeline ---
+                span {
+                    position: relative;
+                }
+
+                span::before {
+                    @include ab.green-underline(96%, 4px, 90%);
+                }
+            }
+
+            // Parrafo ---
+            &__pgh {
+                font-size: clamp(16px, 3vw, 18px);
+                margin-bottom: 8%;
+            }
+
+            // Boton CONTACT ME---
+            &__btn {
+                @extend .btn;
+            }
+
+            &__btn::before {
+                @include ab.green-underline(100%, 2px, 100%);
+            }
+        }
+    }
+
+    // Section experiencia ---
+    &__expe {
+        position: relative;
+        padding-block: 40px;
+        text-align: center;
+        border-top: 1px solid ;
+        border-bottom: 1px solid ;
+        
+
+        article:not(.expe) {
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-size: clamp(32px, calc(28px + 0.97vw), 40px);
+            line-height: 40px;
+        }
+
+        p {
+            font-size: clamp(16px, calc(14px + 0.525vw), 18px);
+        }
+    }
+
+    &__expe::after {
+        content: '';
+        width: 100%;
+        height: 130px;
+        rotate: 180deg;
+        position: absolute;
+        left: 50%;
+        top: 89%;
+        background: url(../../../img/deco-body.svg) -120px center/cover no-repeat;
+    }
+
+    // Seccion proyectos ---
+    &__projects {
+        padding-block: 80px;
+
+        // Contenedor del h4 y a --
+        &--title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12%;
+
+            h4 {
+                font-size: clamp(40px, 9.4vw, 88px);
+            }
+        }
+
+        // Estilos generales del contenedor --
+        a {
+            @extend .btn;
+        }
+
+        a::before {
+            @include ab.green-underline(100%, 2px, 100%);
+        }
+
+        article:not(.proj) {
+            margin-bottom: 40px;
+        }
+        
+        // Estilos de los article --
+        &--arct {
+            // imagen --
+            img {
+                margin-bottom: 20px;
+            }
+
+            // Titulo --
+            h3 {
+                font-size: ab.$h-m;
+                line-height: ab.$h-linem;
+                margin-bottom: 10px;
+            }
+
+            // Lenguages de progaramacion --
+            &__language {
+                display: flex;
+                gap: 18px;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+            }
+
+            // Botones --
+            &__btn {
+                a+a {
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+}
