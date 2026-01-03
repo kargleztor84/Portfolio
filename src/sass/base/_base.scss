@@ -1,4 +1,5 @@
 @use '../abstracts';
+@use '../base/helpers';
 
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
@@ -29,11 +30,9 @@ html {
  */
 
 a {
-  color: abstracts.$text-color;
+  color: abstracts.$grey;
 
-  @include abstracts.on-event {
-   color: abstracts.$green;
-  }
+  @extend .on-hover;
 }
 
 

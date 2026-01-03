@@ -1,13 +1,22 @@
 @use '../abstracts' as ab;
 @use '../base/helpers';
 
+// font-size del h4
+.style-h4 {
+    font-size: clamp(40px, 9.4vw, 88px);
+}
+
+.style-p {
+    font-size: clamp(16px, 3vw, 18px);
+}
+
 // <-- MAIN VISTA MOBIL -->
 .main {
     position: relative;
     overflow: hidden;
     background: url(../../../img/deco-body.svg) (-250px 140px) no-repeat;
 
-    // --- Seccion hero ---
+    // Seccion hero ---
     &__hero {
         margin-bottom: 80px;
 
@@ -61,7 +70,7 @@
 
             // Parrafo ---
             &__pgh {
-                font-size: clamp(16px, 3vw, 18px);
+                @extend .style-p;
                 margin-bottom: 8%;
             }
 
@@ -76,7 +85,7 @@
         }
     }
 
-    // Section experiencia --
+    // Section experiencia -->
     &__expe {
         position: relative;
         padding-block: 40px;
@@ -111,7 +120,7 @@
         background: url(../../../img/deco-body.svg) -120px center/cover no-repeat;
     }
 
-    // Seccion proyectos --
+    // Seccion proyectos ---
     &__projects {
         padding-block: 80px;
 
@@ -122,7 +131,7 @@
             margin-bottom: 12%;
 
             h4 {
-                font-size: clamp(40px, 9.4vw, 88px);
+                @extend .style-h4;
             }
         }
 
@@ -168,5 +177,76 @@
                 }
             }
         }
+    }
+
+    // Seccion contact -->
+    &__contact {
+        padding-block: 60px 60px;
+        background-color: ab.$dark-grey;
+        position: relative;
+
+        // Titulo y texto --
+        &--text {
+            max-width: 445px;
+            margin-inline: auto;
+            text-align: center;
+
+            // Heading -
+            h4 {
+                @extend .style-h4;
+                margin-bottom: 20px;
+            }
+
+            // Parrafo -
+            p {
+                @extend .style-p;
+                margin-bottom: 50px;
+            }
+        }
+
+        // Formulario --
+        &--form {
+            max-width: 445px;
+            margin-inline: auto;
+            
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+
+                input, textarea, button {
+                    text-transform: uppercase;
+                    background-color: inherit;
+                    border: 0;
+                    border-bottom: 1px solid ab.$grey;
+                    padding-bottom: 24px;
+                    padding-left: 24px;
+                    font-family: ab.$text-font-stack;
+                    color: ab.$grey;
+                }
+
+                button {
+                    @extend .btn;
+                    width: fit-content;
+                    padding: 0 0 10px 0;
+                    align-self: end;
+                }
+
+                button::before {
+                    @include ab.green-underline(100%, 1px, 100%)
+                }
+            }
+        }
+    }
+
+    // Decoracion del contact --
+    &__contact::before {
+        content: '';
+        width: 110%;
+        height: 130px;
+        position: absolute;
+        right: 170px;
+        top: 70%;
+        background: url(../../../img/deco-body.svg) center/100% no-repeat;
     }
 }

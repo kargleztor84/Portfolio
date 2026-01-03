@@ -1,3 +1,37 @@
+@use '../abstracts';
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+
+.footer {
+    background-color: abstracts.$dark-grey;
+    padding-block: 10.7%;
+    border-top: 1px solid white;
+
+
+    // Contenedor del logo y nav ---
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        // Logo --
+        &--logo {
+            width: clamp(130px, calc(89.924px + 10.687vw), 172px);
+        }
+
+        // Nav --
+        &--nav {
+            width: clamp(153px, calc(114.832px + 10.178vw), 192px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            a {
+                width: 13.4%;
+            }
+        }
+    }
+}
