@@ -1,4 +1,5 @@
 @use './variables';
+@use "sass:map";
 
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass mixins.
@@ -36,6 +37,7 @@
   }
 }
 
+// linea debajo de los botones de color verde
 @mixin green-underline($w, $h, $p) {
   content: '';
   width: $w;
@@ -43,4 +45,11 @@
   background-color: variables.$green;
   position: absolute;
   top: $p;  
+}
+
+// mixin para los breakpoints (media querys)
+@mixin query($breakpoint) {
+  @media screen and (width >= map.get(variables.$breakpoints, $breakpoint)) {
+    @content;
+  }
 }

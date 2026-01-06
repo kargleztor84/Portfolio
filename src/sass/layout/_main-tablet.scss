@@ -1,0 +1,92 @@
+@use '../abstracts' as ab;
+
+.main {
+    // QUERY DEL MAIN -->
+    @include ab.query(medium) {
+        background: url(../../../img/deco-body.svg) (-190px 85px) no-repeat;
+
+        // Seccion Hero ---
+        &__hero {
+            height: 78vh;
+            display: flex;
+            align-items: end;
+            margin: 0;
+            
+            // contenedor de la imagen --
+            &--img {
+                position: absolute;
+                left: 58%;
+                background-color: ab.$dark-grey;
+                z-index: -1;
+                margin-bottom: 50px;
+            }
+
+            // Contenedor del texto --
+            &--text {
+                width: 480px;
+                text-align: initial;
+                margin-bottom: 70px;
+                
+                h1 {
+                    white-space: pre-line;
+                    margin-bottom: 60px;
+                }
+
+                p {
+                    width: 455px;
+                }
+            }
+        }
+
+        // Seccion Experiensia ---
+        &__expe {
+            border-bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            text-align: initial;
+            row-gap: 52px;
+            padding-block: 52px 0;
+
+            h3 {
+                margin-bottom: 15px;
+            }
+        }
+
+        // Decoracion del main experiencia ---
+        &__expe::after {
+            content: '';
+            left: 74%;
+            top: 80%;
+        }
+
+        // Seccion proyectos ---
+        &__projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+
+            &--title {
+                grid-column: 1 / span 2;
+                margin-bottom: 60px;
+            }
+        }
+
+        // Seccion contact -->
+        &__contact {
+            &--text {
+                h4 {
+                    margin-bottom: 40px;
+                    margin-inline: auto;
+                }
+            }
+        }
+
+        // Decoracion del contact --
+        &__contact::before {
+            height: 120px;
+            right: 535px;
+            top: 80%;
+            background: url(../../../img/deco-body.svg) 420px/42% no-repeat;
+        }
+    }
+}

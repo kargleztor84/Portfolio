@@ -3,7 +3,8 @@
 
 // font-size del h4
 .style-h4 {
-    font-size: clamp(40px, 9.4vw, 88px);
+    font-size: clamp(40px, 9.4vw, 88px);                
+    width: max-content;
 }
 
 .style-p {
@@ -15,6 +16,7 @@
     position: relative;
     overflow: hidden;
     background: url(../../../img/deco-body.svg) (-250px 140px) no-repeat;
+
 
     // Seccion hero ---
     &__hero {
@@ -99,7 +101,7 @@
         }
 
         h3 {
-            font-size: clamp(32px, calc(28px + 0.97vw), 40px);
+            font-size: clamp(32px, calc(16.7px + 4.08vw), 48px);
             line-height: 40px;
         }
 
@@ -111,13 +113,13 @@
     // Decoracion del main experiencia --
     &__expe::after {
         content: '';
-        width: 100%;
-        height: 130px;
+        width: 335px;
+        height: 120px;
         rotate: 180deg;
         position: absolute;
-        left: 50%;
-        top: 89%;
-        background: url(../../../img/deco-body.svg) -120px center/cover no-repeat;
+        left: 48%;
+        top: 90%;
+        background: url(../../../img/deco-body.svg) -70px center/cover no-repeat;
     }
 
     // Seccion proyectos ---
@@ -181,9 +183,10 @@
 
     // Seccion contact -->
     &__contact {
-        padding-block: 60px 60px;
+        padding-block: 80px;
         background-color: ab.$dark-grey;
         position: relative;
+
 
         // Titulo y texto --
         &--text {
@@ -208,7 +211,7 @@
         &--form {
             max-width: 445px;
             margin-inline: auto;
-            
+
             form {
                 display: flex;
                 flex-direction: column;
@@ -227,6 +230,7 @@
 
                 button {
                     @extend .btn;
+                    @extend .on-hover-btn;
                     width: fit-content;
                     padding: 0 0 10px 0;
                     align-self: end;
@@ -247,6 +251,6 @@
         position: absolute;
         right: 170px;
         top: 70%;
-        background: url(../../../img/deco-body.svg) center/100% no-repeat;
+        background: url(../../../img/deco-body.svg) center/80% no-repeat;
     }
 }
