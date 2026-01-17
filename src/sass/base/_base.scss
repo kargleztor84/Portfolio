@@ -30,11 +30,13 @@ html {
  */
 
 a {
-  color: abstracts.$grey;
+  color: abstracts.$white;
+  font-size: 16px;
+  letter-spacing: 2.30px;
+  line-height: 26px;
 
   @extend .on-hover-btn;
 }
-
 
 h1, h2, h3, h4, h5, h6 {
   color: abstracts.$white;
@@ -43,4 +45,12 @@ h1, h2, h3, h4, h5, h6 {
 img {
   width: 100%;
   display: block;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  -webkit-text-fill-color: abstracts.$input-color;
+  transition: background-color 9999s ease-in-out 0s;
 }

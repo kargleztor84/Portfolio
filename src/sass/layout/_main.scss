@@ -15,14 +15,15 @@
 .main {
     position: relative;
     overflow: hidden;
-    background: url(../../../img/deco-body.svg) (-250px 140px) no-repeat;
-
+    background-image: url(../../../img/deco-body.svg);
+    background-repeat: no-repeat;
+    background-position: -250px 140px;
 
     // Seccion hero ---
     &__hero {
         margin-bottom: 80px;
 
-        // Contenedor de la imagen en main__hero ---
+        // Contenedor de la imagen ---
         &--img {
             margin-inline: auto;
             width: clamp(174px, 42vw, 445px);
@@ -89,12 +90,11 @@
 
     // Section experiencia -->
     &__expe {
-        position: relative;
+        // position: relative;
         padding-block: 40px;
         text-align: center;
-        border-top: 1px solid ;
-        border-bottom: 1px solid ;
-        
+        border-top: 1px solid;
+        border-bottom: 1px solid;
 
         article:not(.expe) {
             margin-bottom: 24px;
@@ -117,9 +117,9 @@
         height: 120px;
         rotate: 180deg;
         position: absolute;
-        left: 48%;
-        top: 90%;
-        background: url(../../../img/deco-body.svg) -70px center/cover no-repeat;
+        right: -37%;
+        top: 72rem;
+        background: url(../../../img/deco-body.svg) -70px    center/cover no-repeat;
     }
 
     // Seccion proyectos ---
@@ -152,9 +152,22 @@
         
         // Estilos de los article --
         &--arct {
+            
+            &__img {
+                margin-bottom: 20px;
+                position: relative;
+                background-color: ab.$hover-grey;
+                display: grid;
+                place-items: center;
+
+                &--nav {
+                    display: none;
+                }
+            }
+
             // imagen --
             img {
-                margin-bottom: 20px;
+                position: relative;
             }
 
             // Titulo --
@@ -185,47 +198,80 @@
     &__contact {
         padding-block: 80px;
         background-color: ab.$dark-grey;
-        position: relative;
-
-
+        background-image: url(../../../img/deco-body.svg);
+        background-position: -250px 85%;
+        background-repeat: no-repeat;
+        
         // Titulo y texto --
         &--text {
-            max-width: 445px;
-            margin-inline: auto;
             text-align: center;
 
             // Heading -
             h4 {
                 @extend .style-h4;
                 margin-bottom: 20px;
+                margin-inline: auto;
             }
 
             // Parrafo -
             p {
                 @extend .style-p;
+                margin-inline: auto;
                 margin-bottom: 50px;
+                max-width: 445px;
             }
         }
 
         // Formulario --
         &--form {
-            max-width: 445px;
-            margin-inline: auto;
-
             form {
+                max-width: 445px;
+                margin-inline: auto;
                 display: flex;
                 flex-direction: column;
                 gap: 32px;
+                
 
                 input, textarea, button {
-                    text-transform: uppercase;
-                    background-color: inherit;
+                    width: 100%;
+                    background-color: transparent;
                     border: 0;
                     border-bottom: 1px solid ab.$grey;
                     padding-bottom: 24px;
                     padding-left: 24px;
                     font-family: ab.$text-font-stack;
-                    color: ab.$grey;
+                    color: ab.$input-color;
+                    outline: 0;
+                }
+
+                .input__email {
+                    position: relative;
+                    
+                }
+
+                input:invalid:not(:placeholder-shown) {
+                    border-color: #FF6F5B;
+                    background-image: url(../../../img/valid-input.svg);
+                    background-repeat: no-repeat;
+                    background-position-x: right;
+                }
+
+                input:invalid:not(:placeholder-shown) + .error-message::after {
+                    content: 'Sorry, invalid format here';
+                    color: #FF6F5B;
+                    font-size: 10px;
+                    position: absolute;
+                    top: 90%;
+                    right: 0;
+                }
+
+                input:valid:not(:placeholder-shown) {
+                    border-color: ab.$green;
+                }
+
+                &:has(.input__email input:invalid:not(:placeholder-shown)) button[type="submit"] {
+                    opacity: .6;
+                    pointer-events: none;
                 }
 
                 button {
@@ -234,6 +280,7 @@
                     width: fit-content;
                     padding: 0 0 10px 0;
                     align-self: end;
+                    cursor: pointer;
                 }
 
                 button::before {
@@ -241,16 +288,5 @@
                 }
             }
         }
-    }
-
-    // Decoracion del contact --
-    &__contact::before {
-        content: '';
-        width: 110%;
-        height: 130px;
-        position: absolute;
-        right: 170px;
-        top: 70%;
-        background: url(../../../img/deco-body.svg) center/80% no-repeat;
     }
 }

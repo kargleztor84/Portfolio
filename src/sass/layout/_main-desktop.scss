@@ -1,1 +1,103 @@
+@use '../abstracts' as ab;
+@use '../base/helpers' as hp;
 
+.main {
+    // QUERY DEL MAIN -->
+    @include ab.query(xl) {
+        background-position: -10px 135px, -120px 98%;
+
+        // Seccion Hero ---
+        &__hero {
+            height: 98vh;
+            display: flex;
+
+            // Contenedor de la imagen ---
+            &--img {
+                right: 0;
+
+                // Semicirculo ---
+                &__circle {
+                    right: 86%;
+                }
+            }
+
+            // Contenedor del texto --
+            &--text {
+                padding: 0;
+                margin-block: auto;
+
+                h1 {
+                    white-space: initial;
+                }
+            }
+        }
+
+        // Seccion Experiensia ---
+        &__expe {
+            grid-template-columns: repeat(3, 1fr);
+            padding-block: 52px;
+        }
+
+        // Decoracion del main experiencia --
+        &__expe::after {
+            right: -2%;
+            top: 27.5%;
+        }
+
+        // Seccion proyectos ---
+        &__projects {
+
+            &--arct {
+
+                &__img:hover {
+
+                    img {
+                        z-index: -1;
+                    }
+
+                    .main__projects--arct__img--nav {
+                        position: absolute;
+                        display: grid;
+                        place-items: center;
+                        gap: 20px;
+                    }
+                }
+            }
+        }
+
+        // Seccion contact -->
+        &__contact {
+            background-position: -120px 84%;
+
+            // Contenedor del contacto ---
+            .container {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            // Titulo y texto --
+            &--text {
+                margin: 0;
+                text-align: initial;
+
+                h4 {
+                    margin-inline: 0;
+                    margin-bottom: 60px;
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+
+            // Formulario --
+            &--form {
+                form {
+                    width: 500px;
+                    text-align: end;
+                    margin-inline: initial;
+                }
+            }
+        }
+    }
+}

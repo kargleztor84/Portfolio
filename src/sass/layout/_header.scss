@@ -1,3 +1,5 @@
+@use '../abstracts' as ab;
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
@@ -7,7 +9,8 @@
     position: absolute;
     inset: 0;
     margin: auto;
-    padding-top: 5.4%;
+    z-index: 10;
+    padding-top: 30px;
 
     // Contenedor del logo y nav ---
     &__container {
@@ -31,6 +34,21 @@
             a {
                 width: 13.4%;
             }
+        }
+    }
+
+    // Header tablet --
+    @include ab.query(medium) {
+        &__container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    // --- HEADER DESKTOP ---
+    @include ab.query(xl) {
+        .header__container--nav {
+            margin-right: 30px;
         }
     }
 }
