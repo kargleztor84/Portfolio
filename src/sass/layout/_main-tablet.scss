@@ -3,7 +3,7 @@
 .main {
     // QUERY DEL MAIN -->
     @include ab.query(medium) {
-        background-position: -165px 90px, -265px 99.6%;
+        background-position: -165px 80px;
 
         // Seccion Hero ---
         &__hero {

@@ -4,7 +4,7 @@
 .main {
     // QUERY DEL MAIN -->
     @include ab.query(xl) {
-        background-position: -10px 135px, -120px 98%;
+        background-position: -10px 135px;
 
         // Seccion Hero ---
         &__hero {

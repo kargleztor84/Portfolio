@@ -6,14 +6,14 @@
 
 // --- Contenedor header ---
 .header {
+    width: 100%;
     position: absolute;
-    inset: 0;
-    margin: auto;
     z-index: 10;
     padding-top: 30px;
-
+    
     // Contenedor del logo y nav ---
     &__container {
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
